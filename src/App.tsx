@@ -2,8 +2,8 @@ import { Instagram, Linkedin, Github } from "lucide-react";
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center px-4">
-      <div className="max-w-md text-center">
+    <div className="min-h-screen bg-gray-900 flex flex-col justify-center items-center px-4">
+      <div className="text-center text-white">
         <h1 className="text-5xl font-bold">Fachri Akbar Rahmanda</h1>
         <p className="mt-2 text-lg">Software Engineer</p>
         <div className="flex justify-evenly mt-4 space-x-4">
