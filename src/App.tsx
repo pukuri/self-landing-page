@@ -1,4 +1,3 @@
-import React from "react";
 import { Instagram, Linkedin, Github } from "lucide-react";
 
 function App() {
