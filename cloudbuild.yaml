@@ -1,0 +1,33 @@
+steps:
+  # 1. Install dependencies (faster with cache)
+  - name: 'gcr.io/cloud-builders/npm@1.0.9'
+    args: ['ci']
+    id: 'npm-install'
+    env:
+      - 'npm_config_cache=.npm'
+
+  # 2. Build static files (Tailwind CSS optimized)
+  - name: 'gcr.io/cloud-builders/npm@1.0.9'
+    args: ['run', 'build']
+    waitFor: ['run-tests']
+    id: 'build'
+    env:
+      - 'npm_config_cache=.npm'
+
+  # 3. Deploy to Cloud Storage bucket
+  - name: 'gcr.io/cloud-builders/gsutil'
+    args:
+      - 'rsync'
+      - '-d'
+      - '-r'
+      - './dist/'  # CRA: './build/' | Vite: './dist/'
+      - 'gs://www.fachriakbarr.com'
+    waitFor: ['build']
+    id: 'deploy'
+
+substitutions:
+  _BUCKET: 'www.fachriakbarr.com'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+  machineType: 'E2_HIGHCPU_8'
