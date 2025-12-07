@@ -1,13 +1,13 @@
 steps:
   # 1. Install dependencies (faster with cache)
-  - name: 'gcr.io/cloud-builders/npm@1.0.9'
+  - name: 'gcr.io/cloud-builders/npm'
     args: ['ci']
     id: 'npm-install'
     env:
       - 'npm_config_cache=.npm'
 
   # 2. Build static files (Tailwind CSS optimized)
-  - name: 'gcr.io/cloud-builders/npm@1.0.9'
+  - name: 'gcr.io/cloud-builders/npm'
     args: ['run', 'build']
     waitFor: ['npm-install']
     id: 'build'
