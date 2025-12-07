@@ -9,7 +9,7 @@ steps:
   # 2. Build static files (Tailwind CSS optimized)
   - name: 'gcr.io/cloud-builders/npm@1.0.9'
     args: ['run', 'build']
-    waitFor: ['run-tests']
+    waitFor: ['npm-install']
     id: 'build'
     env:
       - 'npm_config_cache=.npm'
