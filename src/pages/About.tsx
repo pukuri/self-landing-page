@@ -15,7 +15,6 @@ function About() {
       Conducted regular 1-on-1 sessions with team members, mentees, and interns to foster growth and knowledge sharing. 
       Streamlined CMS content setup using Rails for efficiency, while optimizing cloud platform storage, CDN delivery costs, and overall infrastructure economics.`,
       icon: Briefcase,
-      orgColor: "text-blue-400"
     },
     {
       title: "Full-Stack Engineer",
@@ -27,7 +26,6 @@ function About() {
 
       Contributed significantly to migrating server infrastructure from AWS to Google Cloud Platform.`,
       icon: Briefcase,
-      orgColor: "text-blue-400"
     },
     {
       title: "UI & Frontend Engineer",
@@ -35,7 +33,6 @@ function About() {
       period: "2016 - 2018",
       description: "Develop UI front end for numerous websites including news and e-commerce platforms.",
       icon: Briefcase,
-      orgColor: "text-blue-400"
     },
     {
       title: "Computer Science Degree",
@@ -43,7 +40,6 @@ function About() {
       period: "2012 - 2016",
       description: "Foundation in computer science, algorithms, and software engineering principles.",
       icon: GraduationCap,
-      orgColor: "text-green-400"
     }
   ];
 
@@ -77,7 +73,7 @@ function About() {
               {journeyItems.map((item, index) => (
                 <div key={index} className={`flex items-center ${index % 2 === 0 ? '' : 'flex-row-reverse'}`}>
                   <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
-                    <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-750 transition-colors">
+                    <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition-colors">
                       <div className={`flex items-center ${index % 2 === 0 ? 'justify-end' : 'justify-start'} mb-3`}>
                         <div className={`flex items-center ${index % 2 === 0 ? 'flex-row-reverse' : 'flex-row'}`}>
                           <div className={`p-2 rounded-full bg-gray-300 ${index % 2 === 0 ? 'ml-3' : 'mr-3'}`}>
@@ -90,7 +86,7 @@ function About() {
                         </div>
                       </div>
                       <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                      <h4 className={`text-lg font-medium ${item.orgColor} mb-3`}>{item.organization}</h4>
+                      <h4 className={`text-lg font-medium text-blue-400 mb-3`}>{item.organization}</h4>
                       <p className="text-gray-300 leading-relaxed whitespace-pre-line">{item.description}</p>
                     </div>
                   </div>

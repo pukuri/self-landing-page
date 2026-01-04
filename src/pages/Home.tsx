@@ -9,7 +9,7 @@ function Home() {
     const interval = setInterval(() => {
       const titles = ['Fullstack Engineer', 'Frontend Engineer', 'Backend Engineer', 'Engineering Manager', 'Web Developer']
       setTitle(titles[Math.floor(Math.random()*titles.length)])
-    }, 3000)
+    }, 2000)
     
     return () => {
       clearInterval(interval)
@@ -36,7 +36,7 @@ function Home() {
 
         <div className="flex justify-center mt-8 space-x-4">
           <Link to="/about" className="px-6 py-3 hover:underline">About Me</Link>
-          {/* <Link to="/works" className="px-6 py-3 hover:underline">My Works</Link> */}
+          <Link to="/works" className="px-6 py-3 hover:underline">My Works</Link>
         </div>
         
       </div>
