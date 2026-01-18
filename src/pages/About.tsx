@@ -2,6 +2,37 @@ import { ArrowLeft, GraduationCap, Briefcase, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 
 function About() {
+  const techStacks = [
+    {
+      title: "Javascript",
+      subtitle: "Daily use professionally and on my side project. Including React, Typescript, HTML, CSS."
+    },
+    {
+      title: "Python",
+      subtitle: "Learning Python as a hobby, sometimes uses Python when tackling Leetcode problems."
+    },
+    {
+      title: "Ruby",
+      subtitle: "Daily use professionally as my workplace uses Ruby on Rails as its backend."
+    },
+    {
+      title: "Golang",
+      subtitle: "Used for my side project backend. Still learning and try to be better."
+    },
+    {
+      title: "Google Cloud Platform",
+      subtitle: "Daily use. Used GCP as my current workplace and my side project cloud platform."
+    },
+    {
+      title: "Akamai",
+      subtitle: "Usually maintains and configure Akamai as my main workplace CDN."
+    },
+    {
+      title: "SQL",
+      subtitle: "Mainly Postgre. Usually queries data needed for my work and generate reports with Metabase and Zeppelin"
+    }
+  ];
+
   const journeyItems = [
     {
       title: "Engineering Manager & Team Lead",
@@ -64,6 +95,21 @@ function About() {
         </div>
 
         <div className="mt-16 w-full">
+          <h2 className="text-3xl font-bold mb-12">My Stacks</h2>
+          
+          <div className="flex flex-wrap mb-16 gap-y-4 justify-center">
+            {techStacks.map((stack, index) => (
+              <div key={index} className="w-1/4">
+                <div className="bg-gray-800 m-2 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition-colors h-full">
+                  <h3 className="text-xl font-semibold mb-3 text-center">{stack.title}</h3>
+                  <p className="text-gray-300 leading-relaxed text-center text-sm">{stack.subtitle}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="w-full">
           <h2 className="text-3xl font-bold mb-12">My Journey</h2>
           
           <div className="relative">
